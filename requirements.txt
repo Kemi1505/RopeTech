@@ -1,6 +1,6 @@
 flask
 pandas
+openpyxl
 mailmerge
 python-docx
-pywin32
 waitress
