@@ -8,7 +8,7 @@ import traceback
 import math
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-here'
+app.secret_key = 'rope-tech-cert-ificate-gen-erator'  
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB
 
@@ -212,4 +212,5 @@ def index():
     return render_template('index.html', equipment_list=EQUIPMENT_CONFIG.keys())
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    from waitress import serve
+    serve(app, host='0.0.0.0', port=5000)
