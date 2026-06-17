@@ -59,23 +59,23 @@ EQUIPMENT_CONFIG = {
     },
     'Flat Webbing Belts': {
         'template': 'templates/Flat Webbing Belts Template.docx',
-        'sheet': 'Flat Belts'
+        'sheet': 'Flat Webbing Belts'
     },
     'Chain Blocks': {
         'template': 'templates/Chain Blocks Template.docx',
-        'sheet': 'Chain Block'
+        'sheet': 'Chain Blocks'
     },
     'Lever Hoists': {
         'template': 'templates/Lever Hoist Template.docx',
-        'sheet': 'Lever Hoist'
+        'sheet': 'Lever Hoists'
     },
     'Plate Clamps': {
         'template': 'templates/Plate Clamp Template.docx',
-        'sheet': 'Plate Clamp'
+        'sheet': 'Plate Clamps'
     },
     'Wire Ropes': {
         'template': 'templates/Wire Ropes Template.docx',
-        'sheet': 'Wire Rope'
+        'sheet': 'Wire Ropes'
     }
 }
 
@@ -536,6 +536,9 @@ def register():
 #   app.run(debug=True, host='0.0.0.0', port=7000)
 # -----------------------------------------------------------------
 
+# if __name__ == '__main__':
+#     from waitress import serve
+#     serve(app, host='0.0.0.0', port=5000)
+
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host='0.0.0.0', port=5000)
+   app.run(debug=True, host='0.0.0.0', port=7000)
