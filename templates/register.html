@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RopeTech Equipment Certificate</title>
+    <title>Equipment Register Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,14 +36,14 @@
             font-size: 16px;
         }
         button {
-            background: #007bff;
+            background: #28a745;
             color: white;
             border: none;
             cursor: pointer;
             margin-top: 15px;
         }
         button:hover {
-            background: #0056b3;
+            background: #218838;
         }
         .flash {
             background: #f8d7da;
@@ -59,11 +59,22 @@
             text-align: center;
             margin-top: 20px;
         }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>RopeTech Equipment Certificate</h1>
+        <a href="/" class="nav-link">← Back to Certificate Generator</a>
+        
+        <h1>Equipment Register Generator</h1>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <div class="flash">
@@ -78,26 +89,13 @@
             <label for="excel_file">Excel Data File (.xlsx)</label>
             <input type="file" name="excel_file" id="excel_file" accept=".xlsx,.xls" required>
             
-            <label for="equipment">Equipment Type</label>
-            <select name="equipment" id="equipment" required>
-                <option value="">-- Select --</option>
-                {% for equip in equipment_list %}
-                <option value="{{ equip }}">{{ equip.replace('_', ' ').title() }}</option>
-                {% endfor %}
-            </select>
+            <label for="output_name">Output File Name</label>
+            <input type="text" name="output_name" id="output_name" placeholder="e.g., equipment register maton(2026)" required>
+            <small>(.xlsx will be added automatically if missing)</small>
             
-            <label for="output_name">Certificate File Name</label>
-            <input type="text" name="output_name" id="output_name" placeholder="e.g., shackle-maton(2026)" required>
-            <small>(.docx will be added automatically if missing)</small>
-            
-            <button type="submit">Generate Certificate</button>
+            <button type="submit">Generate Equipment Register</button>
         </form>
-        <div class="info">
-            Certificate will download automatically after generation. 
-        </div>
-        <div class="info">
-            <a href="/register" style="display:inline-block; margin-bottom:20px; color:#007bff;"> Equipment Register</a>
-        </div>
+        
     </div>
 </body>
 </html>
